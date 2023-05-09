@@ -1,0 +1,83 @@
+root@student8-virtual-machine:~/바탕화면# tail /etc/shadow
+gnome-initial-setup:*:19411:0:99999:7:::
+hplip:*:19411:0:99999:7:::
+gdm:*:19411:0:99999:7:::
+student8:$y$j9T$mNPpHMUFiyO8wIVJUNQdE1$Eo.vSANE1GFkCvTcB1Rrt8ArjR7Z65xa3Nvs9TpyrS2:19430:0:99999:7:::
+student1:$y$j9T$ou6c7lDjjybEg7gAp5OMs0$p.vJzhfECAF6RvQcvsrQtOMQwoSkH.Zi2ZIbzdIEDFB:19479:10:30:10::20818:
+student2:$y$j9T$h3RHgOduh0okXfpivfBMy0$OGiqkmbAFS3FeQHv6iRa8g7KyY/VpB03qMpcwKLIeZ1:19479:0:99999:7:::
+student3:$y$j9T$ois8O1Fad/LB0z61GKTkA/$8H5F6CM4u9Klk/yVHaIVXFA2Ceazo7hYWOQE2fXegOD:19479:0:99999:7:::
+student4:$y$j9T$wTywAAF6isiK7fzV8AdQG.$rEE7SqGn2QUy8GFGAMbbo6uYr02N2g09aYfyvysiWp4:19479:0:99999:7:::
+hanbit1:$y$j9T$fcAXdYS5hJo..rv6/0Unc0$gXcfAR.UeDax9ESrHHStfniBjP62b7ibOFhZikH4YtC:19479:0:99999:7:::
+hanbit2:$y$j9T$2sdiMS/gcigyh/tv9ib5P0$9QYQIouqXu5oqI.8TQfNWQV3/1fWaZhD5KCaNtEMhV4:19479:0:99999:7:::
+root@student8-virtual-machine:~/바탕화면# chown student1 mydata.txt
+root@student8-virtual-machine:~/바탕화면# ls -l mydata.txt
+-r-xrw-r-x 1 student1 root 0  5월  9 09:28 mydata.txt
+root@student8-virtual-machine:~/바탕화면# chown student2.student2 mydata.txt
+root@student8-virtual-machine:~/바탕화면# ls -l mydata.txt
+-r-xrw-r-x 1 student2 student2 0  5월  9 09:28 mydata.txt
+root@student8-virtual-machine:~/바탕화면# chgrp student3 mydata.txt
+chgrp: 잘못된 그룹: `student3'
+root@student8-virtual-machine:~/바탕화면# chgrp root mydata.txt
+root@student8-virtual-machine:~/바탕화면# ls -l mydata.txt
+-r-xrw-r-x 1 student2 root 0  5월  9 09:28 mydata.txt
+root@student8-virtual-machine:~/바탕화면# nano smaple
+root@student8-virtual-machine:~/바탕화면# cat smaple
+리눅스 명령 연습중
+파일 허가권과 소유권에 대한 명령 실습중
+ls /var
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rw-r--r-- 1 root root 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# chmod u+x smaple
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rwxr--r-- 1 root root 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# smaple
+명령어 'smaple' 을(를) 찾을 수 없습니다. 다음 명령어로 시도하시겠습니까:
+  deb samplebarcode의 명령어 ' (0.99-5)'
+Try: apt install <deb name>
+root@student8-virtual-machine:~/바탕화면# ./smaple
+./smaple: 줄 1: 리눅스: 명령어를 찾을 수 없음
+./smaple: 줄 2: 파일: 명령어를 찾을 수 없음
+backups  cache	crash  lib  local  lock  log  mail  metrics  opt  run  snap  spool  tmp
+root@student8-virtual-machine:~/바탕화면# ls -l smale
+ls: 'smale'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rwxr--r-- 1 root root 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# chown student8 smaple
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rwxr--r-- 1 student8 root 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# chown student8.student8 smaple
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rwxr--r-- 1 student8 student8 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# chmod 754 smaple
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+-rwxr-xr-- 1 student8 student8 92  5월  9 10:15 smaple
+root@student8-virtual-machine:~/바탕화면# su - student8
+student8@student8-virtual-machine:~$ pwd
+/home/student8
+student8@student8-virtual-machine:~$ ls -l /root/smaple
+ls: '/root/smaple'에 접근할 수 없음: 허가 거부
+student8@student8-virtual-machine:~$ ls -ld /root
+drwx------ 17 root root 4096  4월 18 11:08 /root
+student8@student8-virtual-machine:~$ logout
+root@student8-virtual-machine:~/바탕화면# mv smaple ~student8
+root@student8-virtual-machine:~/바탕화면# ls -l smaple
+ls: 'smaple'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@student8-virtual-machine:~/바탕화면# su - student8
+student8@student8-virtual-machine:~$ ls -l smaple
+-rwxr-xr-- 1 student8 student8 92  5월  9 10:15 smaple
+student8@student8-virtual-machine:~$ pwd
+/home/student8
+student8@student8-virtual-machine:~$ ls -ld /home/student8
+drwxr-x--- 14 student8 student8 4096  5월  9 10:39 /home/student8
+student8@student8-virtual-machine:~$ chmod 777 smaple
+student8@student8-virtual-machine:~$ ls -l smaple
+-rwxrwxrwx 1 student8 student8 92  5월  9 10:15 smaple
+student8@student8-virtual-machine:~$ chown root.root smaple
+chown: 'smaple'의 소유권 바꾸는 중: 명령을 허용하지 않음
+student8@student8-virtual-machine:~$ logout
+root@student8-virtual-machine:~/바탕화면# mkdir linkdir
+root@student8-virtual-machine:~/바탕화면# cd linkdir
+root@student8-virtual-machine:~/바탕화면/linkdir# nano originalfile
+root@student8-virtual-machine:~/바탕화면/linkdir# cat originalfile
+링크시킬 원본 파일을 작성합니다.
+root@student8-virtual-machine:~/바탕화면/linkdir# 
